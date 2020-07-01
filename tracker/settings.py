@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 
-ALLOWED_HOSTS = ['faithmcqueen-pytrakr.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['infinite-taiga-84300.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
@@ -131,4 +131,3 @@ LOGIN_REDIRECT_URL = 'home'
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
-
