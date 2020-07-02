@@ -270,6 +270,7 @@ def new_task(request):
             created_task_id = created_task.id
             note = 'Your new task: %s has been added.' % (filled_form.cleaned_data['name'])
             filled_form = TaskForm()
+            return redirect('/PyTraker/tasklist')
         else:
             created_task_id = None
             note = "Your task was not added, please try again."
@@ -303,9 +304,9 @@ def delete_task(request, tasks_id):
     try:
         task_del = Tasks.objects.get(id=tasks_id)
     except Tasks.DoesNotExist:
-        return redirect('/PyTraker/index')
+        return redirect('/PyTraker/tasklist')
     task_del.delete()
-    return redirect('/PyTraker/index')
+    return redirect('/PyTraker/tasklist')
 
 
 # change status of task
